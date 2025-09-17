@@ -122,7 +122,7 @@ const Footer = () => {
               className="mt-2 text-sm sm:text-base text-gray-400 leading-relaxed"
               style={{ fontFamily: "'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif" }}
             >
-              Smart inventory management for modern businesses.
+              Track Smart. Grow Faster.
             </p>
             <div className="mt-4 flex justify-center md:justify-start space-x-4">
               {socialLinks.map((link, index) => (

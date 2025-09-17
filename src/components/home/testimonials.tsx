@@ -153,6 +153,8 @@ export default function Testimonials() {
                   <div className="w-20 h-20 rounded-full overflow-hidden mb-6 ring-2 ring-white/50 shadow-md">
                     {t.avatar ? (
                       <Image
+                        width={80}
+                        height={80}
                         src={t.avatar}
                         alt={`${t.name}'s avatar`}
                         className="w-full h-full object-cover rounded-full"
