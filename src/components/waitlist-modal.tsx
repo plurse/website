@@ -35,46 +35,31 @@ export function WaitlistModalProvider({ children }: WaitlistModalProviderProps) 
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
+    e.preventDefault();
+    setIsSubmitting(true);
+
     try {
-      // Replace with your actual Brevo API key and list ID
-      const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_API_KEY
-      const BREVO_LIST_ID = parseInt(process.env.NEXT_PUBLIC_BREVO_LIST_ID || '8')
-      
-      // Validate environment variables
-      if (!BREVO_API_KEY || !BREVO_LIST_ID) {
-        throw new Error('Brevo configuration is missing')
-      }
-      
-      const response = await fetch('https://api.brevo.com/v3/contacts', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'api-key': BREVO_API_KEY,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          listIds: [BREVO_LIST_ID],
-          updateEnabled: true,
-        }),
-      })
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
 
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Failed to submit email')
+        throw new Error(data.error || "Failed to join waitlist");
       }
 
-      setSubmitStatus('success')
+      setSubmitStatus("success");
     } catch (error) {
-      console.error('Error submitting to Brevo:', error)
-      setSubmitStatus('error')
+      console.error("Error submitting waitlist:", error);
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
+
 
   return (
     <WaitlistModalContext.Provider value={{ openModal, closeModal }}>

@@ -26,8 +26,8 @@ const guides: Guide[] = [
     os: "Linux",
     steps: [
       "Download the `.AppImage` file from the Platforms section.",
-      "Open a terminal and run: `chmod +x InventorySys.AppImage`.",
-      "Execute the app with: `./InventorySys.AppImage`.",
+      "Open a terminal and run: `chmod +x Plurse.AppImage`.",
+      "Execute the app with: `./Plurse.AppImage`.",
       "Alternatively, install via your distro’s package manager.",
     ],
   },

@@ -38,7 +38,7 @@ const Content = () => {
           style={{ fontFamily: "'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif" }}
         >
           Download the <code className="bg-gray-100 px-1 rounded text-gray-800">.exe</code>{" "}
-          installer, double-click it, and follow the setup wizard. After installation, open InventorySys from the Start Menu.
+          installer, double-click it, and follow the setup wizard. After installation, open Plurse from the Start Menu.
         </p>
       </motion.section>
 
@@ -60,7 +60,7 @@ const Content = () => {
           style={{ fontFamily: "'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif" }}
         >
           Download the <code className="bg-gray-100 px-1 rounded text-gray-800">.dmg</code>{" "}
-          file, open it, then drag and drop InventorySys into your Applications folder.
+          file, open it, then drag and drop Plurse into your Applications folder.
         </p>
       </motion.section>
 

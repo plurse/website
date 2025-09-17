@@ -6,13 +6,6 @@ import { Menu, X, User, Mail, MessageSquare, Send, Check } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 
-interface RequestBodyInterface {
-    updateEnabled: boolean;
-    email?: string;
-    listIds: number[];
-    attributes?: { [key: string]: string };
-}
-
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
@@ -48,63 +41,30 @@ const Navbar = () => {
     }
 
     const handleFeedbackSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setIsSubmitting(true)
-        
+        e.preventDefault();
+        setIsSubmitting(true);
+
         try {
-            // Replace with your actual Brevo API key
-            const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_API_KEY
-            const BREVO_LIST_ID = parseInt(process.env.NEXT_PUBLIC_BREVO_FEEDBACK_LIST_ID || '9')
-            
-            // Validate environment variables
-            if (!BREVO_API_KEY) {
-                throw new Error('Brevo configuration is missing')
-            }
-            
-            // Create the request body for Brevo
-            const requestBody: RequestBodyInterface = {
-                updateEnabled: true,
-                listIds: [BREVO_LIST_ID],
-            }
+            const response = await fetch("/api/feedback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, username, feedback }),
+            });
 
-            // Only add email if provided
-            if (email) {
-                requestBody.email = email
-            }
-
-            // Add attributes if any data is provided
-            if (username || feedback) {
-                requestBody.attributes = {}
-                if (username) requestBody.attributes.USERNAME = username
-                if (feedback) requestBody.attributes.FEEDBACK = feedback
-            }
-
-            // Create headers with proper typing
-            const headers: HeadersInit = {
-                'accept': 'application/json',
-                'api-key': BREVO_API_KEY,
-                'content-type': 'application/json',
-            }
-            
-            const response = await fetch('https://api.brevo.com/v3/contacts', {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify(requestBody),
-            })
+            const data = await response.json();
 
             if (!response.ok) {
-                const errorData = await response.json()
-                throw new Error(errorData.message || 'Failed to submit feedback')
+            throw new Error(data.error || "Failed to submit feedback");
             }
 
-            setSubmitStatus('success')
+            setSubmitStatus("success");
         } catch (error) {
-            console.error('Error submitting feedback to Brevo:', error)
-            setSubmitStatus('error')
+            console.error("Error submitting feedback:", error);
+            setSubmitStatus("error");
         } finally {
-            setIsSubmitting(false)
+            setIsSubmitting(false);
         }
-    }
+    };
 
     // Close modal when clicking outside
     useEffect(() => {

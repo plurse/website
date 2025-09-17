@@ -34,9 +34,9 @@ const cardVariants: Variants = {
 const contacts = [
   {
     method: "Email",
-    info: "support@inventorysys.com",
+    info: "ramsesnjasap11@gmail.com",
     icon: <Mail className="w-6 h-6 text-gray-800" />,
-    href: "mailto:support@inventorysys.com",
+    href: "mailto:ramsesnjasap11@gmail.com",
     target: false, // No new tab
   },
   {

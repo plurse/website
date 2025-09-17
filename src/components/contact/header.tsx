@@ -99,7 +99,7 @@ const Header = () => {
         >
           <motion.div custom={0} variants={buttonVariants} whileHover="hover" className="rounded-full">
             <Link
-              href="mailto:support@inventorysys.com"
+              href="mailto:ramsesnjasap11@gmail.com"
               className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-black text-white text-sm sm:text-base font-medium tracking-tight rounded-full hover:bg-gray-900 transition-all duration-300"
               style={{ fontFamily: "'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif" }}
             >
