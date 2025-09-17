@@ -1,10 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import { motion, Variants, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Download, ArrowRight } from "lucide-react"
-import Image from "next/image"
+import { Download } from "lucide-react"
 
 // Animation variants for heading and subtext
 const textVariants: Variants = {
@@ -38,16 +36,6 @@ const versionVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5, ease: "easeOut", delay: 0.6 },
-  },
-}
-
-// Animation variants for hero image
-const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.8 },
   },
 }
 

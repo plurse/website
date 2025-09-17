@@ -4,7 +4,6 @@ import { motion, Variants, useInView } from "framer-motion"
 import { useRef } from "react"
 import { ArrowRight } from "lucide-react"
 import { useWaitlistModal } from "../waitlist-modal"
-import Link from "next/link"
 
 // Animation variants for heading and subtext
 const textVariants: Variants = {
@@ -13,21 +12,6 @@ const textVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
-  },
-}
-
-// Animation variants for CTA button
-const ctaVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut", delay: 0.4 },
-  },
-  hover: {
-    scale: 1.05,
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-    transition: { duration: 0.3 },
   },
 }
 

@@ -5,6 +5,14 @@ import Link from "next/link"
 import { Menu, X, User, Mail, MessageSquare, Send, Check } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
+
+interface RequestBodyInterface {
+    updateEnabled: boolean;
+    email?: string;
+    listIds: number[];
+    attributes?: { [key: string]: string };
+}
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
@@ -54,7 +62,7 @@ const Navbar = () => {
             }
             
             // Create the request body for Brevo
-            const requestBody: any = {
+            const requestBody: RequestBodyInterface = {
                 updateEnabled: true,
                 listIds: [BREVO_LIST_ID],
             }
@@ -278,7 +286,7 @@ const Navbar = () => {
                                 ) : (
                                     <>
                                         <p className="text-gray-600 mb-6">
-                                            We'd love to hear your thoughts, suggestions, or concerns about Plurse.
+                                            We&apos;d love to hear your thoughts, suggestions, or concerns about Plurse.
                                         </p>
                                         <form onSubmit={handleFeedbackSubmit} className="space-y-4">
                                             <div className="relative">

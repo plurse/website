@@ -88,7 +88,7 @@ const Header = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-black leading-tight tracking-tight"
             style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}
           >
-            Discover Plurse' Powerful Features
+            Discover Plurse&apos;s Powerful Features
           </h1>
           <p
             className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"

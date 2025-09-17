@@ -1,6 +1,6 @@
 "use client"
 
-import { Clock, CheckCircle, PieChart, TrendingUp, Shield } from "lucide-react"
+import { Clock, TrendingUp, Shield } from "lucide-react"
 import { motion, Variants, useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -130,7 +130,7 @@ const ValueProposition = () => {
             className="text-lg sm:text-xl text-gray-600 leading-snug max-w-3xl mx-auto"
             style={{ fontFamily: "'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif" }}
           >
-            Plurse doesn't just track your sales — it helps you manage money, optimize operations, and grow smarter every day.
+            Plurse doesn&apos;t just track your sales — it helps you manage money, optimize operations, and grow smarter every day.
           </p>
         </motion.div>
 

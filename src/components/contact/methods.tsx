@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, Globe, Github, Slash } from "lucide-react"
+import { Mail, Phone, Globe, Slash } from "lucide-react"
 import Link from "next/link"
 import { motion, Variants, useInView } from "framer-motion"
 import { useRef } from "react"

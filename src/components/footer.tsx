@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { motion, Variants, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Send, Twitter, Github, Instagram, Linkedin } from "lucide-react"
+import { Send, Linkedin } from "lucide-react"
 
 // Define quick link interface for TypeScript
 interface QuickLink {

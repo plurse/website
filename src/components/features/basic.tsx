@@ -3,7 +3,6 @@
 import { motion, Variants, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Cloud, Smartphone, LineChart, Brain, Lock, ArrowRight, CreditCard, Printer } from "lucide-react"
-import Link from "next/link"
 import { useWaitlistModal } from "../waitlist-modal"
 
 
@@ -119,21 +118,6 @@ const decorVariants: Variants = {
     opacity: 0.15,
     scale: 1,
     transition: { duration: 1.2, ease: "easeOut" },
-  },
-}
-
-// Animation variants for CTA button
-const ctaVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut", delay: 0.6 },
-  },
-  hover: {
-    scale: 1.05,
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-    transition: { duration: 0.3 },
   },
 }
 

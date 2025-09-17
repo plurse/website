@@ -3,6 +3,7 @@
 import { motion, Variants, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 interface Testimonial {
   name: string;
@@ -61,15 +62,6 @@ const decorVariants: Variants = {
     transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] },
   },
 };
-
-const buttonVariants: Variants = {
-  hover: { 
-    scale: 1.05, 
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", 
-    transition: { duration: 0.2 } 
-  },
-  tap: { scale: 0.95 }
-}
 
 export default function Testimonials() {
   const ref = useRef<HTMLElement>(null);
@@ -160,7 +152,7 @@ export default function Testimonials() {
                 <div className="bg-white/70 dark:bg-zinc-900/50 backdrop-blur-xl rounded-3xl shadow-md p-8 h-full flex flex-col items-center text-center border border-white/20 dark:border-zinc-800 transition-all duration-500 hover:shadow-xl hover:bg-white/90 dark:hover:bg-zinc-900/70">
                   <div className="w-20 h-20 rounded-full overflow-hidden mb-6 ring-2 ring-white/50 shadow-md">
                     {t.avatar ? (
-                      <img
+                      <Image
                         src={t.avatar}
                         alt={`${t.name}'s avatar`}
                         className="w-full h-full object-cover rounded-full"

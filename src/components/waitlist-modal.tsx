@@ -172,7 +172,7 @@ function WaitlistModal({ isOpen, onClose, email, setEmail, onSubmit, isSubmittin
                   </div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Thank you for joining!</h3>
                   <p className="text-gray-600">
-                    We'll notify you when the Basic version is available.
+                    We&apos;ll notify you when the Basic version is available.
                   </p>
                   <button
                     onClick={onClose}

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, Variants, useInView } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 
 const DemoSection = () => {
   const ref = useRef<HTMLElement>(null)

@@ -4,7 +4,6 @@ import { motion, Variants, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Check, X, ArrowRight } from "lucide-react"
 import { useWaitlistModal } from "../waitlist-modal"
-import Link from "next/link"
 
 // Define comparison data interface for TypeScript
 interface ComparisonFeature {
@@ -102,21 +101,6 @@ const rowVariants: Variants = {
   }),
   hover: {
     backgroundColor: "#F9FAFB",
-    transition: { duration: 0.3 },
-  },
-}
-
-// Animation variants for CTA button
-const ctaVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut", delay: 0.6 },
-  },
-  hover: {
-    scale: 1.05,
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
     transition: { duration: 0.3 },
   },
 }
